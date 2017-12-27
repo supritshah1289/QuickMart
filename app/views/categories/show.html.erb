@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show list</title>
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="tag">
+  <div class="container">
+    <h2><%= @category.title.capitalize %></h2>
+
+    <div class="cards row">
+      <% @items.each do |i| %>
+      <div class="card col-xs-4">
+        <%= image_tag i.image %>
+        <h2><%= i.title %> | $<%= i.price%></h2>
+        <p><%= i.description %></p>
+        <%= link_to "See more", item_path(i)%>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

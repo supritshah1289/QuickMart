@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create new category</title>
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="tag">
+  <div class="container">
+    <h2>Add a new Item </h2>
+    <p>All the fields are mandatory</p>
+    <%= form_for(@item) do |i| %>
+      <div class="field">
+        <%= i.label :title %><br>
+        <%= i.text_field :title, placeholder: "Sandwich name", :required => true%>
+      </div>
+      <div class="field">
+        <%= i.label :description %><br>
+        <%= i.text_area :description, placeholder: "Sandwich ingredients", :required => true %>
+      </div>
+      <div class="field">
+        <%= i.label :price %><br>
+        <%= i.text_area :price, placeholder: "5.25", :required => true %>
+      </div>
+      <div class="field">
+        <%= i.label :available %><br>
+        <%= i.text_area :available, placeholder: "true | false", :required => true %>
+      </div>
+      <div class="field">
+        <%= i.label :image %><br>
+        <%= i.text_area :image, placeholder: "Imgae url", :required => true %>
+      </div>
+      <!-- <div class="field">
+        <%= i.label :category %><br>
+        <%= select_tag(:category_id,options_for_select(@categories.map{|c| [c.title, c.id]}))%>
+      </div> -->
+     <div class="field">
+        <%= i.label :category %><br>
+        <%= i.select :category_id,options_for_select(@categories.map{|c| [c.title, c.id]}) %>
+      </div>
+      <div class="actions">
+        <%= i.submit "Create" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>

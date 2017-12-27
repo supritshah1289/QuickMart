@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Item</title>
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="destination">
+  <div class="container">
+    <%= image_tag @item.image %>
+
+    <%= form_for(@item) do |d|%>
+      <%= d.text_area :title%><br>
+      <%= d.text_area :description%>
+      <%= d.text_area :price%>
+      <%= d.text_area :available%>
+      <%= d.text_area :image%>
+      <%= d.submit 'Update'%>
+    <%end%>
+  </div>
+</div>
+
+
+</body>
+</html>

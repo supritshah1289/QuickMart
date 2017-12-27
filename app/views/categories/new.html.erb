@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create new category</title>
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="tag">
+  <div class="container">
+    <h2>Add a new category</h2>
+    <p>All the fields are mandatory</p>
+    <%= form_for(@category) do |c| %>
+      <div class="field">
+        <%= c.label :title %><br>
+        <%= c.text_field :title, placeholder: "Breakfast", :required => true%>
+      </div>
+      <div class="field">
+        <%= c.label :image %><br>
+        <%= c.text_area :image, placeholder: "Imgae url", :required => true %>
+      </div>
+      <div class="field">
+        <%= c.label :description %><br>
+        <%= c.text_area :description, placeholder: "Best breakfast in town", :required => true %>
+      </div>
+      <div class="actions">
+        <%= c.submit "Create" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>

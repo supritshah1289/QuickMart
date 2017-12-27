@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Item</title>
+</head>
+<body>
+  <div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="destination">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= image_tag @item.image %>
+        <h2><%= @item.title.capitalize%> | <%= @item.price%></h2>
+        <p><%= @item.description %></p>
+        <%= link_to "Edit", edit_item_path(@item) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
