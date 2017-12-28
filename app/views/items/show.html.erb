@@ -13,7 +13,9 @@
         <h2><%= @item.title.capitalize%> | <%= @item.price%></h2>
         <p><%= @item.description %></p>
         <%= link_to "Edit", edit_item_path(@item) %>
+        <% if current_user %>
         <%= link_to "Delete Item",item_path(@item),method: :delete, data: {confirm: "Are you sure?"} %>
+        <%end%>
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :require_user, only: [:create, :new, :edit, :destroy, :update]
+
   def index
     @categories = Category.all
   end

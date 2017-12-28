@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :require_user, only: [:create, :new, :edit, :destroy, :update, :show]
+
   def show
     @item = Item.find(params[:id])
   end

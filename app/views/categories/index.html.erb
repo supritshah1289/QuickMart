@@ -19,7 +19,9 @@
         <h2><%= c.title.capitalize %></h2>
         <p class="catdesc"><%= c.description %></p>
         <%= link_to "Check all #{c.title}" , category_path(c) %>
-        <%= link_to "Delete", category_path(c.id) ,method: :delete, data: {confirm: "Are you sure?"} %>
+        <%if admin? %>
+          <%= link_to "Delete", category_path(c.id) ,method: :delete, data: {confirm: "Are you sure?"} %>
+        <%end%>
       </div>
       <% end %>
     </div>

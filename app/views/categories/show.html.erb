@@ -16,7 +16,11 @@
         <%= image_tag i.image %>
         <h2><%= i.title %> | $<%= i.price%></h2>
         <p><%= i.description %></p>
-        <%= link_to "See more", item_path(i)%>
+
+        <% if admin? %>
+          <%= link_to "See more", item_path(i)%>
+        <%end%>
+
       </div>
       <% end %>
     </div>
