@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update_attributes(item_params)
+      flash[:success] = "Item added"
       redirect_to(:action => 'show', :id =>@item.id)
     else
       render 'edit'
@@ -24,9 +25,18 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_create_params)
     if @item.save
-      redirect_to '/categories'
+      redirect_to root_path
     else
       render 'new'
+    end
+  end
+
+  def destroy
+    @item = Item.destroy(params[:id])
+    if @item.destroy
+      redirect_to root_path
+    else
+      render 'show'
     end
   end
 

@@ -17,8 +17,9 @@
       <div class="card col-xs-4">
         <%= image_tag c.image %>
         <h2><%= c.title.capitalize %></h2>
-        <p><%= c.description %></p>
+        <p class="catdesc"><%= c.description %></p>
         <%= link_to "Check all #{c.title}" , category_path(c) %>
+        <%= link_to "Delete", category_path(c.id) ,method: :delete, data: {confirm: "Are you sure?"} %>
       </div>
       <% end %>
     </div>

@@ -21,6 +21,15 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.destroy(params[:id])
+    if @category.destroy
+      redirect_to root_path
+    else
+      render 'show'
+    end
+  end
+
   private
   def category_params
     params.require(:category).permit(:title, :image, :description)
