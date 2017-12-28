@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create new category</title>
+</head>
+<body>
+
+<div class="tag">
+  <div class="container">
+    <h2>Login</h2>
+    <p>All the fields are mandatory</p>
+    <%= form_for(:session, url: login_path) do |u| %>
+
+      <div class="field">
+        <%= u.label :email %><br>
+        <%= u.text_field :email, placeholder: "sam@gmail.com", :required => true %>
+      </div>
+      <div class="field">
+        <%= u.label :password %><br>
+        <%= u.password_field :password, placeholder: "*******", :required => true %>
+      </div>
+      <div class="actions">
+        <%= u.submit "Login" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>

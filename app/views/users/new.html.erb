@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create new category</title>
+</head>
+<body>
+
+<div class="tag">
+  <div class="container">
+    <h2>Create a new user</h2>
+    <p>All the fields are mandatory</p>
+    <%= form_for(@user) do |u| %>
+      <div class="field">
+        <%= u.label :first_name %><br>
+        <%= u.text_field :first_name, placeholder: "first name", :required => true%>
+      </div>
+      <div class="field">
+        <%= u.label :last_name %><br>
+        <%= u.text_field :last_name, placeholder: "last name", :required => true %>
+      </div>
+      <div class="field">
+        <%= u.label :email %><br>
+        <%= u.text_field :email, placeholder: "sam@gmail.com", :required => true %>
+      </div>
+      <div class="field">
+        <%= u.label :password %><br>
+        <%= u.password_field :password, placeholder: "*******", :required => true %>
+      </div>
+      <div class="actions">
+        <%= u.submit "Create" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>
