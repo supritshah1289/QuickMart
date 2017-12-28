@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Categories Home</title>
+  <title>QuickMart</title>
 </head>
 <body>
-  <div class="header">
   <div class="container">
-    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
     <h1>Categories</h1>
   </div>
 </div>
@@ -18,9 +16,9 @@
       <% @categories.each do |c| %>
       <div class="card col-xs-4">
         <%= image_tag c.image %>
-        <h2><%= c.title %></h2>
+        <h2><%= c.title.capitalize %></h2>
         <p><%= c.description %></p>
-        <%= link_to "Learn more", category_path(c) %>
+        <%= link_to "Check all #{c.title}" , category_path(c) %>
       </div>
       <% end %>
     </div>
