@@ -14,8 +14,8 @@
       <% @items.each do |i| %>
       <div class="card col-xs-4">
         <%= image_tag i.image %>
-        <h2><%= i.title %> | $<%= i.price%></h2>
-        <p><%= i.description %></p>
+        <h2 class="card-title"><%= i.title %> | $<%= i.price%></h2>
+        <p class="catdesc card-text"><%= i.description %></p>
         <a href="tel:+9739941009">Order now</a>
         <% if admin? %>
           <%= link_to "See more", item_path(i)%>
