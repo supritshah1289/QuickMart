@@ -9,25 +9,24 @@
             <li class="nav-item active">
               <%= link_to "Home", root_path, class: "nav-link" %>
             </li>
-
             <% @categories.each do |c|%>
-              <li class="nav-item">
-                <%= link_to "#{c.title}", category_path(c.id), class: "nav-link" %>
-              </li>
-            <%end%>
-
+                <li class="nav-item">
+                  <%= link_to "#{c.title.capitalize}", category_path(c.id), class: "nav-link" %>
+                </li>
+              <%end%>
             <%if current_user%>
               <li class="nav-item">
-                <%= link_to "Add Item", "/items_new",class: "nav-link" %>
+                <%= link_to "Add Category", "/categories_new",class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "Add Item", "/categories_new",class: "nav-link" %>
+                <%= link_to "Add Item", "/items_new",class: "nav-link" %>
               </li>
 
               <li class="nav-item">
                 <%= link_to "logout", logout_path, method: "delete" ,class: "nav-link" %>
               </li>
             <%else%>
+
               <li class="nav-item">
                 <%= link_to "Login", "/login", class: "nav-link" %>
               </li>

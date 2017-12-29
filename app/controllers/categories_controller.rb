@@ -12,13 +12,14 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @category = Category.new
   end
 
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to '/categories'
+      redirect_to root_path
     else
       render 'new'
     end
