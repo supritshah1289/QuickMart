@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :admin?
+  helper_method :current_user, :admin?, :tel_to
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
     else
       false
     end
+  end
+
+  def tel_to(text)
+    groups = text.to_s.scan(/(?:^\+)?\d+/)
+    link_to text, "tel:#{groups.join '-'}"
   end
 
 end

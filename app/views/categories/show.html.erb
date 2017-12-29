@@ -16,7 +16,7 @@
         <%= image_tag i.image %>
         <h2><%= i.title %> | $<%= i.price%></h2>
         <p><%= i.description %></p>
-
+        <a href="tel:+13126078958">Order now</a>
         <% if admin? %>
           <%= link_to "See more", item_path(i)%>
         <%end%>
