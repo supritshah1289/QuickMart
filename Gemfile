@@ -7,6 +7,7 @@ end
 
 #css framework
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'popper_js', '~> 1.11', '>= 1.11.1'
 gem 'jquery-rails'
 
 ruby "2.4.2"
