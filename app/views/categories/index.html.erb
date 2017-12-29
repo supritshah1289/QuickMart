@@ -16,8 +16,8 @@
       <% @categories.each do |c| %>
       <div class="card col-xs-4">
         <%=link_to( image_tag(c.image), category_path(c), {:style=>'background-color:transparent'}) %>
-        <h4 class="card-title"><%= c.title.capitalize %></h4>
-        <p class="catdesc card-text"><%= c.description %></p>
+        <h2 class="card-title"><%= c.title.capitalize %></h2>
+        <p class="catdesc"><%= c.description %></p>
         <%= link_to "Check all #{c.title}" , category_path(c) %>
         <%if admin? %>
           <%= link_to "Delete", category_path(c.id) ,method: :delete, data: {confirm: "Are you sure?"} %>
