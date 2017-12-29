@@ -89,9 +89,9 @@ h2 a {
   height:auto
 }
 
-.tag h2, .tag .card h2, .destination h2, .destination p {
-  padding: 0 20px 0;
-}
+// .tag h2, .tag .card h2, .destination h2, .destination p {
+//   padding: 0 20px 0;
+// }
 
 .tag .card p {
   color: #0f0f0f;
@@ -857,7 +857,9 @@ h2 a {
 @media (max-width: 600px) {
   .tags .card h2 {
     top: 5%;
+
   }
+
 
   .card a,
   .destination a,
