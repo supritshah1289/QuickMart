@@ -3,10 +3,12 @@ class ItemsController < ApplicationController
   before_action :require_user, only: [:create, :new, :edit, :destroy, :update, :show]
 
   def show
+    @categories = Category.all
     @item = Item.find(params[:id])
   end
 
   def edit
+    @categories = Category.all
     @item = Item.find(params[:id])
   end
 
